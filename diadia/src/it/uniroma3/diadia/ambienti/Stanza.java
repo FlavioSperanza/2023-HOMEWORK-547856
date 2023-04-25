@@ -188,5 +188,15 @@ public class Stanza {
 			direzioni[i] = this.direzioni[i];
 		return direzioni;
 	}
+	
+	
+
+	public int getNumeroAttrezzi() {
+		return numeroAttrezzi;
+	}
+
+	public int getNumeroAttrezziAggiungibili() {
+		return NUMERO_MASSIMO_ATTREZZI-this.getNumeroAttrezzi();
+	}
 
 }

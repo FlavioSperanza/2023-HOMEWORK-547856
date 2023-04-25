@@ -71,4 +71,17 @@ public class Partita {
 		this.finita = true;
 	}
 	
+	public boolean giocatoreIsVivo() {
+		return this.giocatore.getCfu()>0;
+	}
+	
+	public void setStanzaCorrente(Stanza stanzaCorrente) {
+		this.getLabirinto().setStanzaCorrente(stanzaCorrente);
+	}
+
+	public Stanza getStanzaCorrente() {
+		return this.getLabirinto().getStanzaCorrente();
+	}
+	
+
 }
