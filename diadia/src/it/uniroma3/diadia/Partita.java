@@ -1,8 +1,8 @@
 package it.uniroma3.diadia;
 import it.uniroma3.diadia.ambienti.Labirinto;
 import it.uniroma3.diadia.ambienti.Stanza;
-import it.uniroma3.diadia.giocatore.Giocatore;
 
+import it.uniroma3.diadia.giocatore.Giocatore;
 
 /**
  * Questa classe modella una partita del gioco
@@ -13,48 +13,45 @@ import it.uniroma3.diadia.giocatore.Giocatore;
  */
 
 public class Partita {
-	
-	Labirinto labirinto;
-	private boolean finita;
+
+
+
+	private Labirinto labirinto;
 	private Giocatore giocatore;
-	
-	public Partita(){
-		labirinto = new Labirinto();
-		labirinto.creaStanze();
+	private boolean finita;
+
+	public Partita(Labirinto labirinto){
+		this.labirinto = labirinto;
 		giocatore = new Giocatore();
+		//labirinto.creaStanze();
 		this.finita = false;
 	}
 
-	
-	public Labirinto getLabirinto() {
+	public Labirinto getLabirinto(){
 		return labirinto;
 	}
-
-
 
 	public void setLabirinto(Labirinto labirinto) {
 		this.labirinto = labirinto;
 	}
-	
-	
+
+
 	public Giocatore getGiocatore() {
 		return giocatore;
 	}
 
-
 	public void setGiocatore(Giocatore giocatore) {
 		this.giocatore = giocatore;
 	}
-
 
 	/**
 	 * Restituisce vero se e solo se la partita e' stata vinta
 	 * @return vero se partita vinta
 	 */
 	public boolean vinta() {
-		return this.labirinto.getStanzaCorrente()== this.labirinto.getStanzaVincente();
+		return labirinto.getStanzaCorrente()== labirinto.getStanzaVincente();
 	}
-	
+
 	/**
 	 * Restituisce vero se e solo se la partita e' finita
 	 * @return vero se partita finita
@@ -70,7 +67,7 @@ public class Partita {
 	public void setFinita() {
 		this.finita = true;
 	}
-	
+
 	public boolean giocatoreIsVivo() {
 		return this.giocatore.getCfu()>0;
 	}
